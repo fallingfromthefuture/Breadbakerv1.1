@@ -1,0 +1,30 @@
+# Breadbakerv1- v4.1 — Hyperliquid Config (Alpha Arena Winner)
+exchange: hyperliquid
+symbol: BTC-PERP                    # Change to SOL-PERP for 50%+ monthly
+paper_trading: true                 # ← SET TO false when live
+risk_percent_per_trade: 0.33        # 1/3% risk = Kelly-optimal
+
+# LLM Mutation Engine (DGM-ME-RiC v5)
+llm_mutation: true
+llm_provider: grok                  # Free at https://x.ai/api
+grok_api_key: "grok-your-key-here"  # 100k tokens/day free
+
+# Hyperliquid
+hyperliquid:
+  private_key: "0xYOUR_FULL_PRIVATE_KEY_HERE"
+
+# Evolution
+evolution:
+  enabled: true
+  mutate_every_hours: 24
+  children_per_parent: 5
+
+# Trading Rules
+trading:
+  atr_period: 14
+  atr_multiplier_sl: 1.5
+  rr_tp1: 1.0
+  rr_tp2: 1.5
+  partial_percent_tp1: 50
+  max_leverage: 5
+  cooldown_after_loss_seconds: 300
